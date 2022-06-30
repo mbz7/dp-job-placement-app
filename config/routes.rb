@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :clients, only: %i[index show create destroy]
+  resources :jobs, only: %i[index show create destroy]
+  resources :jobs, only: %i[index show create destroy]
+
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path",

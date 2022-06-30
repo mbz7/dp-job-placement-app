@@ -1,3 +1,3 @@
 class JobSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :client_id, :email, :role, :urgency, :quantity, :skills
 end

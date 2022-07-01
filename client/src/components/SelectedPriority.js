@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 function SelectedPriority({ job }) {
-  const urgency = job.urgency;
+  let urgency = job.urgency;
 
   const [style, setStyle] = useState(() => {
     if (urgency === "High") {
@@ -14,7 +14,7 @@ function SelectedPriority({ job }) {
     }
   });
 
-  console.log(urgency);
+  console.log(style);
   //   const handleStyle = (urgency) => {
 
   //   };

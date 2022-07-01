@@ -61,7 +61,9 @@ export default function Home() {
             </div>
           </Col>
         </Col>
-        <JobCards jobs={filteredPost()} />
+        <Col className="mt-5">
+          <JobCards jobs={filteredPost()} />
+        </Col>
         {/* <SelectedJob /> */}
       </Container>
     </>

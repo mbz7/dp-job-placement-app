@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
 
 function JobCard({
   id,
@@ -24,7 +25,83 @@ function JobCard({
 
   return (
     <>
-      <Container>
+      <Card className="p-4 mb-4 bg-light rounded shadow-sm">
+        {/* <Card.Header></Card.Header> */}
+        <Card.Body>
+          <Row>
+            <Card.Title>
+              <Row>
+                <Col>
+                  <h3>{role}</h3>
+                </Col>
+                <Col
+                  lg={3}
+                  className="d-flex align-items-start justify-content-end"
+                >
+                  <div>
+                    <Priority urgency={urgency} />
+                  </div>
+                </Col>
+              </Row>
+            </Card.Title>
+            <hr />
+
+            <Card.Text>
+              <Row className="d-flex flex-row">
+                <p>
+                  <strong>Information:</strong>
+                </p>
+                <Col className="">
+                  <Col>
+                    <p>Client: {client} </p>
+                  </Col>{" "}
+                  <Col>
+                    <p>POC: {contact}</p>
+                  </Col>{" "}
+                  <Col>
+                    <p>Email: {email}</p>
+                  </Col>{" "}
+                  <Col>
+                    <p>Quanity: {quantity}</p>
+                  </Col>{" "}
+                </Col>
+              </Row>{" "}
+              <hr />
+              {/* <strong>Client:</strong>  */}
+            </Card.Text>
+          </Row>
+          <Col className="">
+            <p>
+              <strong>Skills:</strong>
+            </p>
+            <div>
+              {skillsArry.map((skill, id) => {
+                return (
+                  <Button
+                    className="m-1 border shadow-sm"
+                    size="sm"
+                    variant="light"
+                    key={id}
+                  >
+                    {skill}
+                  </Button>
+                );
+              })}
+            </div>
+          </Col>
+          <hr />
+          <Button
+            className="text-right mt-2 mb-1 btn-lg"
+            as={Link}
+            to={`/jobs/${id}`}
+            variant="warning"
+          >
+            Add/View Candidates
+          </Button>
+        </Card.Body>
+      </Card>
+
+      {/* <Container>
         <Row className="p-3 mb-4 border shadow-sm text-left bg-light">
           <Col>
             <h2>{role}</h2>
@@ -51,12 +128,6 @@ function JobCard({
                 <div>
                   <Priority urgency={urgency} />
                 </div>
-                {/* <div>
-                  <Badge className="p-2" bg="secondary">
-                    Quantity:
-                    {quantity}
-                  </Badge>
-                </div> */}
               </Stack>
             </ListGroup.Item>
             <ListGroup.Item>
@@ -82,7 +153,6 @@ function JobCard({
             </ListGroup.Item>
             <ListGroup.Item>
               <Button
-                // variant="default"
                 className="text-right mt-2 btn-md mb-1 btn-lg w-100"
                 as={Link}
                 to={`/jobs/${id}`}
@@ -93,7 +163,7 @@ function JobCard({
           </ListGroup>
 
           <Col sm={4}>
-            {/* <div>
+            <div>
               <p>
                 <strong>Point Of Contact:</strong>
               </p>
@@ -101,10 +171,10 @@ function JobCard({
             </div>
 
             <p>{email}</p>
-            <p>{role}</p> */}
+            <p>{role}</p>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 }

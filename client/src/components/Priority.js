@@ -12,13 +12,15 @@ function Priority({ urgency }) {
     }
   });
 
-  console.log(style);
+  // console.log(style);
   //   const handleStyle = (urgency) => {
 
   //   };
   return (
     <>
-      <Button variant={style}>Priority: {urgency}</Button>
+      <Button size="sm" variant={style}>
+        Priority: {urgency}
+      </Button>
     </>
   );
   //

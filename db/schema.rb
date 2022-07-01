@@ -25,14 +25,8 @@ ActiveRecord::Schema.define(version: 2022_06_30_212649) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "clients", force: :cascade do |t|
-    t.string "company_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "jobs", force: :cascade do |t|
-    t.integer "client_id"
+    t.string "client_name"
     t.string "contact_name"
     t.string "email"
     t.string "role"

@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   
     def show
       job = find_job
-      render json: job
+      render json: job, serializer: JobsWithClientAndCandidates
     end
   
     # def create

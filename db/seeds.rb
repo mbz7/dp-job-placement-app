@@ -4,31 +4,31 @@ require 'faker'
 puts '🌱 Seeding data...'
 
 puts '🗑 Destroying old data...'
-Client.destroy_all
+# Client.destroy_all
 Job.destroy_all
 Candidate.destroy_all
 
 # create companies
-puts 'Creating Clients...'
-c1 =
-  Client.create!(
-    company_name: 'PwC',
-  )
+# puts 'Creating Clients...'
+# c1 =
+#   Client.create!(
+#     company_name: 'PwC',
+#   )
 
-c2 =
-  Client.create!(
-    company_name: Faker::Company.name,
-  )
+# c2 =
+#   Client.create!(
+#     company_name: Faker::Company.name,
+#   )
 
-c3 =
-  Client.create!(
-    company_name: Faker::Company.name,
-  )
+# c3 =
+#   Client.create!(
+#     company_name: Faker::Company.name,
+#   )
 
 # create jobs
 puts 'Creating jobs...'
 j1 = Job.create!(
-    client_id: c1.id,
+    client_name: 'PwC',
     contact_name: 'Maria Rodriguez',
     email: 'M.RD43@datapiper.com',
     role: 'Core Senior Software Developer - Senior Associate',
@@ -38,7 +38,7 @@ j1 = Job.create!(
 )
 
 j2 = Job.create!(
-  client_id: c2.id,
+  client_name: 'Zendesk',
   contact_name: 'David Smith',
   email: 'DavidS_33@datapiper.com',
   role: 'Zendesk Developer',
@@ -48,7 +48,7 @@ j2 = Job.create!(
 )
 
 j3 = Job.create!(
-  client_id: c3.id,
+  client_name: 'Datavault',
   contact_name: 'Rob Adams',
   email: 'Rob_Adams@datapiper.com',
   role: 'Datavault 2.0',

@@ -9,24 +9,24 @@ function CandidateCards({ candidates, jobId }) {
   return (
     <>
       {/* List of Candidates */}
-      <Col className="mt-5 p-3 text-left">
+      <Col className="mt-5 text-left">
         <Row>
-          <Col>
+          <Col lg={3} xs={3}>
             <p>
               <strong>First Name</strong>
             </p>
           </Col>
-          <Col>
+          <Col lg={3} xs={3}>
             <p>
               <strong>Last Name</strong>
             </p>
           </Col>
-          <Col>
-            <p>
+          <Col lg={3} xs={3}>
+            <p className="text-right">
               <strong>Phone Number</strong>
             </p>
           </Col>
-          <Col>
+          <Col lg={3} xs={3}>
             <p>
               <strong>City, State</strong>
             </p>

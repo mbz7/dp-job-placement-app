@@ -22,6 +22,7 @@ function SelectedJob() {
   const { id } = useParams();
   const jobId = job.id;
   const urgency = job.urgency;
+  // console.log(priority);
 
   // fetch job
   useEffect(() => {
@@ -57,7 +58,7 @@ function SelectedJob() {
           </Button>
         </Col>
 
-        <JobDetails job={job} urgency={urgency} />
+        <JobDetails job={job} urgency={job.urgency} />
 
         <Row>
           <Col>
@@ -67,13 +68,13 @@ function SelectedJob() {
             />
           </Col>
 
-          <Col lg={6} className="bg-light shadow-sm border">
+          <Col lg={6} className="bg-light shadow-sm border p-4">
             <Col>
               <h2 className="text-center mt-5">Candidates</h2>
             </Col>
             <hr />
 
-            <Col>
+            <Col className="p-3">
               <CandidateCards candidates={candidates} />
             </Col>
           </Col>

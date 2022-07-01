@@ -6,22 +6,21 @@ import Col from "react-bootstrap/Col";
 function CandidateCard({ firstName, lastName, phoneNumber, city_state }) {
   return (
     <div>
-      <Container>
-        <Row>
-          <Col sm={2}>
-            <p>{firstName}</p>
-          </Col>
-          <Col sm={2}>
-            <p>{lastName}</p>
-          </Col>
-          <Col>
-            <p>{phoneNumber}</p>
-          </Col>
-          <Col>
-            <p>{city_state}</p>
-          </Col>
-        </Row>
-      </Container>
+      <Row className="candidate-list">
+        <Col lg={3} sm={3}>
+          <p>{firstName}</p>
+        </Col>
+        <Col lg={3} sm={3}>
+          <p>{lastName}</p>
+        </Col>
+        <Col lg={3} sm={3}>
+          <p className="text-right">{phoneNumber}</p>
+        </Col>
+        <Col lg={3} sm={3}>
+          <p>{city_state}</p>
+        </Col>
+      </Row>
+      <hr />
     </div>
   );
 }

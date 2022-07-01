@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Priority from "./Priority";
+import SelectedPriority from "./SelectedPriority";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
@@ -8,11 +8,12 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 
-function JobDetails({ job, urgency }) {
+function JobDetails({ job }) {
   // console.log(job);
-  // console.log(client);
+  // console.log(priority);
   // const [urgency, setUrgency] = useState("");
-  console.log(urgency);
+  // const priority = [job.urgency];
+  // setUrgency(priority);
   return (
     <>
       <Container fluid className="mt-5">
@@ -26,7 +27,7 @@ function JobDetails({ job, urgency }) {
             <p>{job.role}</p>
             <Stack direction="horizontal" gap={3}>
               <div>
-                <Priority urgency={urgency} />
+                <SelectedPriority job={job} />
               </div>
               <div>
                 <Badge className="p-2" bg="secondary">

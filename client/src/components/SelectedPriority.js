@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-function Priority({ urgency }) {
+function SelectedPriority({ job }) {
+  const urgency = job.urgency;
+
   const [style, setStyle] = useState(() => {
     if (urgency === "High") {
       return "danger";
@@ -12,7 +14,7 @@ function Priority({ urgency }) {
     }
   });
 
-  console.log(style);
+  console.log(urgency);
   //   const handleStyle = (urgency) => {
 
   //   };
@@ -26,4 +28,4 @@ function Priority({ urgency }) {
   //
 }
 
-export default Priority;
+export default SelectedPriority;

@@ -6,7 +6,6 @@ function JobCards({ jobs }) {
   return (
     <>
       <div className="p-4">
-        {" "}
         <h1 className="text-center">Job Listings</h1>
       </div>
       <hr />

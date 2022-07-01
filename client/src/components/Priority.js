@@ -11,6 +11,8 @@ function Priority({ urgency }) {
       return "success";
     }
   });
+
+  console.log(style);
   //   const handleStyle = (urgency) => {
 
   //   };

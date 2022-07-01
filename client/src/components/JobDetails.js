@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Priority from "./Priority";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -8,10 +8,11 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 
-function JobDetails({ job }) {
-  console.log(job);
+function JobDetails({ job, urgency }) {
+  // console.log(job);
   // console.log(client);
-  const urgency = job.urgency;
+  // const [urgency, setUrgency] = useState("");
+  console.log(urgency);
   return (
     <>
       <Container fluid className="mt-5">

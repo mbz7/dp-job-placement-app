@@ -46,7 +46,7 @@ export default function Home() {
     <>
       <Container>
         <Col>
-          <h2 className="tet-center">Search For Jobs By Role</h2>
+          <h2 className="text-center">Search For Jobs By Role or Client</h2>
           <Col lg={8} className=" search-bar-container text-center">
             <div
               className="ms-auto search-bar mx-auto"
@@ -54,7 +54,7 @@ export default function Home() {
             >
               <input
                 type="search"
-                placeholder="Search For A Concert Here..."
+                placeholder="Search by Role or Client"
                 onChange={(e) => changeSearchStringInState(e.target.value)}
                 className="w-100"
               />

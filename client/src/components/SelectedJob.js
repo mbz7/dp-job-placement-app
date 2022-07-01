@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import JobDetail from "./JobDetail";
+import JobDetails from "./JobDetails";
 import CandidateCards from "./CandidateCards";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import NewCandidateAddForm from "./NewCandidateAddForm";
+import Button from "react-bootstrap/Button";
 
 function SelectedJob() {
   //scroll to top effect
@@ -9,31 +14,67 @@ function SelectedJob() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [jobs, setJobs] = useState({
-    client: [],
+  const [job, setJob] = useState({
     candidates: [],
   });
 
-  const client = jobs.client;
-  const candidates = jobs.candidates;
+  const candidates = job.candidates;
   const { id } = useParams();
+  const jobId = job.id;
 
-  // fetch jobs
+  // fetch job
   useEffect(() => {
     fetch(`/jobs/${id}`)
       .then((r) => r.json())
       .then((joblist) => {
-        setJobs(joblist);
+        setJob(joblist);
       });
   }, [id]);
-  console.log(jobs);
+  // console.log(jobs);
   //   console.log(client);
   //   console.log(candidates);
 
+  const addCandidate = (newCandidate) => {
+    //fetch to add image to concert
+    //inside callback once you have a new image from that post fetch:
+    setJob((job) => {
+      return { ...job, candidates: [...job.candidates, newCandidate] };
+    });
+  };
+
   return (
     <>
-      <JobDetail client={client} jobs={jobs} />
-      <CandidateCards candidates={candidates} />
+      <Container className="align-center">
+        <Col className="d-flex align-items-center pt-3">
+          <Button
+            variant="outline-dark"
+            className="text-right btn-md btn-md"
+            as={Link}
+            to={`/`}
+          >
+            Back To Jobs
+          </Button>
+        </Col>
+
+        <JobDetails job={job} />
+
+        <Row>
+          <Col>
+            <NewCandidateAddForm candidates={addCandidate} jobId={jobId} />
+          </Col>
+
+          <Col lg={6} className="bg-light shadow-sm border">
+            <Col>
+              <h2 className="text-center mt-5">Candidates</h2>
+            </Col>
+            <hr />
+
+            <Col>
+              <CandidateCards candidates={candidates} />
+            </Col>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

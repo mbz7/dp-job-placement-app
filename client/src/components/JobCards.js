@@ -5,7 +5,10 @@ function JobCards({ jobs }) {
   // console.log(jobs);
   return (
     <>
-      <h1>Job Page</h1>
+      <div className="p-4">
+        {" "}
+        <h1 className="text-center">Job Listings</h1>
+      </div>
       <hr />
       {jobs.map((job) => {
         return (
@@ -13,6 +16,7 @@ function JobCards({ jobs }) {
             key={job.id}
             id={job.id}
             client={job.client_name}
+            contact={job.contact_name}
             email={job.email}
             role={job.role}
             urgency={job.urgency}

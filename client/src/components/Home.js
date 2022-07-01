@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Container from "react-bootstrap/esm/Container";
 import JobCards from "./JobCards";
 import SelectedJob from "./SelectedJob";
 
@@ -25,8 +26,10 @@ export default function Home() {
 
   return (
     <>
-      <JobCards jobs={jobs} />
-      {/* <SelectedJob /> */}
+      <Container>
+        <JobCards jobs={jobs} />
+        {/* <SelectedJob /> */}
+      </Container>
     </>
   );
 }

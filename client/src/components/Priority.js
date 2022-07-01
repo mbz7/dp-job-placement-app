@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import Badge from "react-bootstrap/badge";
 
 function Priority({ urgency }) {
   const [style, setStyle] = useState(() => {
     if (urgency === "High") {
-      return "text-danger";
+      return "danger";
     } else if (urgency === "Medium") {
-      return "text-warning";
+      return "warning";
     } else if (urgency === "Low") {
-      return "text-success";
+      return "success";
     }
   });
   //   const handleStyle = (urgency) => {
@@ -15,7 +16,9 @@ function Priority({ urgency }) {
   //   };
   return (
     <>
-      <p className={style}>{urgency}</p>
+      <Badge className="p-2" bg={style}>
+        Priority: {urgency}
+      </Badge>
     </>
   );
   //

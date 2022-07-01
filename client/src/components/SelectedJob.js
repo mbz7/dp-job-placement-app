@@ -35,7 +35,7 @@ function SelectedJob() {
   //   console.log(candidates);
 
   const addCandidate = (newCandidate) => {
-    //fetch to add image to concert
+    //fetch to add candidate to job
     //inside callback once you have a new image from that post fetch:
     setJob((job) => {
       return { ...job, candidates: [...job.candidates, newCandidate] };
@@ -60,7 +60,10 @@ function SelectedJob() {
 
         <Row>
           <Col>
-            <NewCandidateAddForm candidates={addCandidate} jobId={jobId} />
+            <NewCandidateAddForm
+              onAddNewCandidate={addCandidate}
+              jobId={jobId}
+            />
           </Col>
 
           <Col lg={6} className="bg-light shadow-sm border">

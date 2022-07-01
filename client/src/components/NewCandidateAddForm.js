@@ -15,8 +15,8 @@ function NewCandidateAddForm({ jobId, onAddNewCandidate }) {
   const [newCityState, setNewCityState] = useState("");
 
   // POST new candidate
-  function handleImageSubmit(e) {
-    e.preventDefault();
+  function handleCandidateSubmit(e) {
+    // e.preventDefault();
     const data = {
       job_id: jobId,
       first_name: newFirstName,
@@ -45,21 +45,41 @@ function NewCandidateAddForm({ jobId, onAddNewCandidate }) {
             </h4>
             <Form.Group className="mb-3" controlId="formBasicFirstName">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="name" placeholder="Enter First Name" />
+              <Form.Control
+                onChange={(e) => setNewFirstName(e.target.value)}
+                type="name"
+                placeholder="Enter First Name"
+              />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicLastName">
+            <Form.Group
+              onChange={(e) => setNewLastName(e.target.value)}
+              className="mb-3"
+              controlId="formBasicLastName"
+            >
               <Form.Label>Last Name</Form.Label>
               <Form.Control type="name" placeholder="Enter Last Name" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+            <Form.Group
+              onChange={(e) => setNewPhone(e.target.value)}
+              className="mb-3"
+              controlId="formBasicPhoneNumber"
+            >
               <Form.Label>Phone Number</Form.Label>
               <Form.Control type="name" placeholder="Enter Phone Number" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCityState">
+            <Form.Group
+              onChange={(e) => setNewCityState(e.target.value)}
+              className="mb-3"
+              controlId="formBasicCityState"
+            >
               <Form.Label>City, State</Form.Label>
               <Form.Control type="name" placeholder="Enter City, State" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button
+              onClick={handleCandidateSubmit}
+              variant="primary"
+              type="submit"
+            >
               Submit
             </Button>
           </Form>

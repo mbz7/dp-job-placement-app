@@ -1,6 +1,5 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
 function CandidateCard({ firstName, lastName, phoneNumber, city_state }) {

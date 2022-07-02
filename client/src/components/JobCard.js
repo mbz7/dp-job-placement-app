@@ -19,7 +19,6 @@ function JobCard({
 }) {
   // function to split job skills array so that it can styled into individual buttons
   const skillsArry = skills.split(",");
-  console.log(skillsArry);
 
   return (
     <>

@@ -12,10 +12,6 @@ function Priority({ urgency }) {
     }
   });
 
-  // console.log(style);
-  //   const handleStyle = (urgency) => {
-
-  //   };
   return (
     <>
       <Button size="md" variant={style} className="p-2 w-75 shadow-sm">

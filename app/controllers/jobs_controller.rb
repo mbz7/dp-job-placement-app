@@ -12,22 +12,7 @@ class JobsController < ApplicationController
       render json: job, serializer: JobsWithClientAndCandidates
     end
   
-    # def create
-    #   job = Candidate.create!(candidate_params)
-    #   render json: comment, status: :created
-    # end
-  
-    # def destroy
-    #   comment = find_comment
-    #   comment.destroy
-    #   head :no_content
-    # end
-  
     private
-  
-    # def candidate_params
-    #   params.permit(:job_id, :first_name, :last_name, :phone, :city_state)
-    # end
   
     def find_job
       Job.find(params[:id])

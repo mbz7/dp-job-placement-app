@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # resources :clients, only: %i[index show create destroy]
   resources :jobs, only: %i[index show create destroy]
   resources :candidates, only: %i[index show create destroy]
 

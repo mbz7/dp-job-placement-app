@@ -17,12 +17,6 @@ class CandidatesController < ApplicationController
       render json: comment, status: :created
     end
   
-    # def destroy
-    #   comment = find_comment
-    #   comment.destroy
-    #   head :no_content
-    # end
-  
     private
   
     def candidate_params

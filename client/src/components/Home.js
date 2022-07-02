@@ -33,7 +33,6 @@ export default function Home() {
         setJobs(joblist);
       });
   }, []);
-  console.log(jobs);
 
   return (
     <>
@@ -50,7 +49,7 @@ export default function Home() {
               <Col lg={8} className=" search-bar-container text-center m-auto">
                 <div
                   className="ms-auto search-bar mx-auto"
-                  controlId="formBasicSearch"
+                  controlid="formBasicSearch"
                 >
                   <input
                     type="search"

@@ -3,7 +3,6 @@ import JobCard from "./JobCard";
 import Col from "react-bootstrap/Col";
 
 function JobCards({ jobs }) {
-  // console.log(jobs);
   return (
     <>
       <Col className="mt-5">

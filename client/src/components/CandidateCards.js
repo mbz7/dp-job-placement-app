@@ -1,11 +1,9 @@
 import React from "react";
 import CandidateCard from "./CandidateCard";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
 function CandidateCards({ candidates, jobId }) {
-  console.log(candidates);
   return (
     <>
       {/* List of Candidates */}

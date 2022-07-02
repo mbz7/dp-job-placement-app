@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import NewCandidateAddForm from "./NewCandidateAddForm";
 import Button from "react-bootstrap/Button";
+import "../css/jobdetails.css";
 
 function SelectedJob() {
   //scroll to top effect
@@ -33,7 +34,7 @@ function SelectedJob() {
         setJob(joblist);
       });
   }, [id]);
-  // console.log(jobs);
+  console.log(job);
   //   console.log(client);
   //   console.log(candidates);
 
@@ -47,8 +48,8 @@ function SelectedJob() {
 
   return (
     <>
-      <Container className="align-center">
-        <Col className="d-flex align-items-center pt-3">
+      <Container className="m-auto">
+        <Col className="d-flex align-items-center pt-3 mt-3">
           <Button
             variant="outline-dark"
             className="text-right btn-md btn-md"
@@ -58,20 +59,35 @@ function SelectedJob() {
             Back To Jobs
           </Button>
         </Col>
+        {/* {job.map((j) => {
+          return (
+            <JobDetails
+              key={j.id}
+              id={j.id}
+              client={j.client_name}
+              contact={j.contact_name}
+              email={j.email}
+              role={j.role}
+              urgency={j.urgency}
+              quantity={j.quantity}
+              skills={j.skills}
+            />
+          );
+        })} */}
 
         <JobDetails job={job} urgency={job.urgency} />
 
-        <Row>
-          <Col>
+        <Row className="gap-5 ml-3 rounded">
+          <Col lg={5}>
             <NewCandidateAddForm
               onAddNewCandidate={addCandidate}
               jobId={jobId}
             />
           </Col>
 
-          <Col lg={6} className="bg-light shadow-sm border p-4">
+          <Col className="candidate-list-container rounded p-4">
             <Col>
-              <h2 className="text-center mt-5">Candidates</h2>
+              <h3 className="text-center mt-5 ">CANDIDATES</h3>
             </Col>
             <hr />
 

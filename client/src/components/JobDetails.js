@@ -23,7 +23,7 @@ function JobDetails({ job, skillsArry, urgency }) {
 
   return (
     <>
-      <div className="job-card-container">
+      <div className="job-details-card-container mt-5 w-100">
         <div className="job-card-container-content">
           <Row>
             <Col lg={6} className="job-card-title-group">
@@ -60,7 +60,7 @@ function JobDetails({ job, skillsArry, urgency }) {
               <Col className="text-center">
                 <p className="job-card-quantity">Urgency</p>
                 <div>
-                  <Priority urgency={[job.urgency]} />
+                  <SelectedPriority job={job} />
                 </div>
               </Col>{" "}
             </Col>

@@ -7,10 +7,10 @@ function JobCards({ jobs }) {
   return (
     <>
       <Col className="mt-5">
-        <div className="p-4">
+        {/* <div className="p-4">
           <h1 className="text-center">Job Listings</h1>
         </div>
-        <hr />
+        <hr /> */}
         {jobs.map((job) => {
           return (
             <JobCard

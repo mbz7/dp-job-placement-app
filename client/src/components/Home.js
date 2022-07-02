@@ -52,7 +52,7 @@ export default function Home() {
         <Container>
           <Col>
             <Col className="home-search-container shadow">
-              <h4 className="text-center">Search</h4>
+              <h4 className="text-center">SEARCH FOR AVAILABLE JOBS</h4>
               <Col lg={8} className=" search-bar-container text-center m-auto">
                 <div
                   className="ms-auto search-bar mx-auto"

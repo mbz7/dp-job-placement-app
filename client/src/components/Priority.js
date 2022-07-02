@@ -18,7 +18,7 @@ function Priority({ urgency }) {
   //   };
   return (
     <>
-      <Button size="md" variant={style} className="p-2 w-75">
+      <Button size="md" variant={style} className="p-2 w-75 shadow-sm">
         {urgency}
       </Button>
     </>

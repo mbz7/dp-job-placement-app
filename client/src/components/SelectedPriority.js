@@ -14,13 +14,13 @@ function SelectedPriority({ job }) {
     }
   });
 
-  console.log(style);
+  // console.log(style);
   //   const handleStyle = (urgency) => {
 
   //   };
   return (
     <>
-      <Button variant={style}>Priority: {urgency}</Button>
+      <Button variant="outline-dark">{urgency}</Button>
     </>
   );
   //

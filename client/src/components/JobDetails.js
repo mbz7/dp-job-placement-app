@@ -60,7 +60,7 @@ function JobDetails({ job, skillsArry, urgency }) {
               <Col className="text-center">
                 <p className="job-card-quantity">Urgency</p>
                 <div>
-                  <Priority urgency={job.urgency} />
+                  <Priority urgency={[job.urgency]} />
                 </div>
               </Col>{" "}
             </Col>
@@ -89,7 +89,7 @@ function JobDetails({ job, skillsArry, urgency }) {
           </Row>
         </div>
       </div>
-      <Container fluid className="mt-5">
+      {/* <Container fluid className="mt-5">
         <Row className="p-3 mb-4 border shadow-sm text-left">
           <Col>
             <h2>{job.client_name}</h2>
@@ -114,7 +114,7 @@ function JobDetails({ job, skillsArry, urgency }) {
             <p>{job.skills}</p>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 }

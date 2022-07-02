@@ -22,6 +22,7 @@ function SelectedJob() {
   const { id } = useParams();
   const jobId = job.id;
   const urgency = job.urgency;
+  // const skillsArry = job.skills;
   // console.log(priority);
 
   // fetch job

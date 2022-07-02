@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import JobCards from "./JobCards";
-import SelectedJob from "./SelectedJob";
 import Col from "react-bootstrap/Col";
 import "../css/home.css";
 
@@ -9,6 +8,7 @@ export default function Home() {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
 
+  // Search Filter Functions
   const changeSearchStringInState = (searchString) => {
     setSearch(searchString);
   };
@@ -25,7 +25,7 @@ export default function Home() {
     }
   };
 
-  // fetch jobs
+  // GET - fetch all jobs
   useEffect(() => {
     fetch("/jobs")
       .then((r) => r.json())
@@ -35,20 +35,14 @@ export default function Home() {
   }, []);
   console.log(jobs);
 
-  // useEffect(() => {
-  //   fetch("/jobs")
-  //     .then((r) => r.json())
-  //     .then((data) => {
-  //       setJobs(data);
-  //     });
-  // }, []);
-
   return (
     <>
+      {/* Hero Section */}
       <div>
         <div className="home-hero">
           <h1>Job Openings</h1>
         </div>
+        {/* Start of Search and Job Listings Container */}
         <Container>
           <Col>
             <Col className="home-search-container shadow">
@@ -68,10 +62,10 @@ export default function Home() {
               </Col>
             </Col>
           </Col>
+          {/* Job Listings */}
           <Col className="mt-5">
             <JobCards jobs={filteredPost()} />
           </Col>
-          {/* <SelectedJob /> */}
         </Container>
       </div>
     </>

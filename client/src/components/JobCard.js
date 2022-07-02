@@ -2,13 +2,8 @@ import React from "react";
 import Priority from "./Priority";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
-import Stack from "react-bootstrap/Stack";
-import ListGroup from "react-bootstrap/ListGroup";
-import Card from "react-bootstrap/Card";
 import { PersonCircle } from "react-bootstrap-icons";
 import { Envelope } from "react-bootstrap-icons";
 
@@ -22,6 +17,7 @@ function JobCard({
   quantity,
   skills,
 }) {
+  // function to split job skills array so that it can styled into individual buttons
   const skillsArry = skills.split(",");
   console.log(skillsArry);
 
@@ -52,6 +48,7 @@ function JobCard({
               <p className="job-card-subheader">SKILLS</p>
               <Col lg={8} className="gap-3 mr-5">
                 <div>
+                  {/* function to map through new skills array and input each into a styled button */}
                   {skillsArry.map((skill, id) => {
                     return (
                       <Button

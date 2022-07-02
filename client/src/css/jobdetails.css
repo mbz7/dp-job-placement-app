@@ -1,3 +1,5 @@
+/* Job Details and Selected Job Styles */
+
 .job-details-title {
   font-size: 30px;
   margin-top: 10px;
@@ -25,8 +27,6 @@
   text-align: left;
   margin-bottom: 20px;
   padding-top: 10px;
-  /* identical to box height */
-
   color: #000000;
 }
 

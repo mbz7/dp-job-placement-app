@@ -7,10 +7,7 @@ function JobCards({ jobs }) {
   return (
     <>
       <Col className="mt-5">
-        {/* <div className="p-4">
-          <h1 className="text-center">Job Listings</h1>
-        </div>
-        <hr /> */}
+        {/* iterate through jobs and assign props */}
         {jobs.map((job) => {
           return (
             <JobCard

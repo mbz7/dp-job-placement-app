@@ -1,3 +1,5 @@
+/* Global Styles */
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -15,7 +17,9 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-.home-container {
+/* Global styles for App.js */
+
+.main-container {
   background: #f3f8fc;
   padding-bottom: 50px;
   min-height: 100vh;
@@ -23,25 +27,5 @@ h6 {
 
 .nav-styles {
   background: #f2f4f8;
-  /* border: 1px solid #000000; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.search-bar {
-  /* min-width: 200px;
-  max-width: 800px; */
-  padding: 20px 0;
-
-  /* margin-top: -20px; */
-}
-
-.search-bar input {
-  /* width: 35rem; */
-  height: 50px;
-  border-radius: 20px;
-  border: 1px #ccc solid;
-  /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
-  /* font-size: 20px; */
-  padding: 20px;
-  /* background-color: #192430 !important; */
 }

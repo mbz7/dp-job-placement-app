@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import "../css/jobdetails.css";
 
 function SelectedJob() {
-  //scroll to top effect
+  //scroll to top effect function
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -19,14 +19,12 @@ function SelectedJob() {
     candidates: [],
   });
 
+  // assign new variables in incoming objects, jobs object has nested arrays
   const candidates = job.candidates;
   const { id } = useParams();
   const jobId = job.id;
-  const urgency = job.urgency;
-  // const skillsArry = job.skills;
-  // console.log(priority);
 
-  // fetch job
+  // GET fetch all jobs
   useEffect(() => {
     fetch(`/jobs/${id}`)
       .then((r) => r.json())
@@ -34,13 +32,10 @@ function SelectedJob() {
         setJob(joblist);
       });
   }, [id]);
-  console.log(job);
-  //   console.log(client);
-  //   console.log(candidates);
 
   const addCandidate = (newCandidate) => {
     //fetch to add candidate to job
-    //inside callback once you have a new image from that post fetch:
+    //inside callback once you have a new candidate from that post fetch:
     setJob((job) => {
       return { ...job, candidates: [...job.candidates, newCandidate] };
     });

@@ -1,3 +1,7 @@
+/* Styles for Home.js, JobDetails.js, JobCard.js */
+
+/* Home Hero */
+
 .home-hero {
   width: 100%;
   height: 336px;
@@ -25,6 +29,8 @@
   color: #ecf0f1;
 }
 
+/* Search Bar */
+
 .home-search-container {
   height: 200px;
   min-width: 600px;
@@ -40,8 +46,20 @@
   color: #545454;
 }
 
+.search-bar {
+  padding: 20px 0;
+}
+
+.search-bar input {
+  height: 50px;
+  border-radius: 20px;
+  border: 1px #ccc solid;
+  padding: 20px;
+}
+
+/* Job Cards*/
+
 .job-card-container {
-  /* max-width: 986px; */
   margin: 0 auto;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -55,7 +73,6 @@
 }
 
 .job-card-title-group {
-  /* padding: 20px 0; */
   text-align: left;
 }
 
@@ -67,8 +84,6 @@
   line-height: 47px;
   text-align: left;
   margin-bottom: 20px;
-  /* identical to box height */
-
   color: #000000;
 }
 
@@ -78,20 +93,13 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  /* identical to box height, or 140% */
-
   text-align: left;
-
   color: #626262;
 }
 
 .job-card-view-button {
   width: 254px;
   height: 55px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
   background: #068bc0 !important;
   border: 1px solid #f1f1f1;
   box-shadow: 0px 2px 2px rgba(215, 215, 215, 0.25);
@@ -104,10 +112,8 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
-
   text-align: center;
   margin: 0 auto;
-
   color: #ffffff;
 }
 
@@ -116,12 +122,8 @@
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  /* line-height: 28px; */
   text-transform: uppercase;
-  /* identical to box height, or 233% */
-
   text-align: left;
-
   color: #7e7e7e;
 }
 
@@ -130,7 +132,6 @@
   border: 1px solid #f1f1f1 !important;
   box-shadow: 0px 2px 2px rgba(215, 215, 215, 0.25);
   border-radius: 12px;
-  /* padding: 20px; */
 }
 
 .job-card-skills-button span {
@@ -139,10 +140,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 28px;
-  /* identical to box height, or 200% */
-
   text-align: center;
-
   color: #626262;
 }
 
@@ -153,10 +151,7 @@
   font-size: 16px;
   line-height: 22px;
   text-transform: uppercase;
-  /* identical to box height, or 200% */
-
   text-align: center;
-
   color: #7c7a7a;
 }
 
@@ -166,8 +161,6 @@
   font-weight: 700;
   font-size: 35px;
   line-height: 28px;
-  /* identical to box height, or 93% */
-
   text-align: center;
 }
 
@@ -176,9 +169,5 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  /* margin-left: 20px; */
-  /* line-height: 20px; */
-  /* identical to box height, or 98% */
-
   color: #050505;
 }

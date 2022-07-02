@@ -3,6 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import JobCards from "./JobCards";
 import SelectedJob from "./SelectedJob";
 import Col from "react-bootstrap/Col";
+import "../css/home.css";
 
 export default function Home() {
   const [jobs, setJobs] = useState([]);
@@ -44,28 +45,35 @@ export default function Home() {
 
   return (
     <>
-      <Container>
-        <Col>
-          <h2 className="text-center">Search For Jobs By Role or Client</h2>
-          <Col lg={8} className=" search-bar-container text-center">
-            <div
-              className="ms-auto search-bar mx-auto"
-              controlId="formBasicSearch"
-            >
-              <input
-                type="search"
-                placeholder="Search by Role or Client"
-                onChange={(e) => changeSearchStringInState(e.target.value)}
-                className="w-100"
-              />
-            </div>
+      <div>
+        <div className="home-hero">
+          <h1>Job Openings</h1>
+        </div>
+        <Container>
+          <Col>
+            <Col className="home-search-container shadow">
+              <h4 className="text-center">Search</h4>
+              <Col lg={8} className=" search-bar-container text-center m-auto">
+                <div
+                  className="ms-auto search-bar mx-auto"
+                  controlId="formBasicSearch"
+                >
+                  <input
+                    type="search"
+                    placeholder="Search by Role or Client..."
+                    onChange={(e) => changeSearchStringInState(e.target.value)}
+                    className="w-100"
+                  />
+                </div>
+              </Col>
+            </Col>
           </Col>
-        </Col>
-        <Col className="mt-5">
-          <JobCards jobs={filteredPost()} />
-        </Col>
-        {/* <SelectedJob /> */}
-      </Container>
+          <Col className="mt-5">
+            <JobCards jobs={filteredPost()} />
+          </Col>
+          {/* <SelectedJob /> */}
+        </Container>
+      </div>
     </>
   );
 }

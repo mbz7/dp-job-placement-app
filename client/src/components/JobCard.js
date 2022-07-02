@@ -25,81 +25,84 @@ function JobCard({
 
   return (
     <>
-      <Card className="p-4 mb-4 bg-light rounded shadow-sm">
-        {/* <Card.Header></Card.Header> */}
-        <Card.Body>
-          <Row>
-            <Card.Title>
-              <Row>
-                <Col>
-                  <h3>{role}</h3>
-                </Col>
-                <Col
+      {/* <div className="job-card-container"></div> */}
+      {/* <Card className="p-4 mb-4 bg-light rounded shadow-sm"> */}
+      <div className="job-card-container">
+        <Row>
+          <Col lg={6} className="job-card-title-group">
+            <h3 className="job-card-job_title">{role}</h3>
+            <p className="job-card-client_name">{client} </p>
+          </Col>
+          <Col className="p-4 d-flex align-items-center justify-content-center">
+            <Button
+              className="job-card-view-button"
+              as={Link}
+              to={`/jobs/${id}`}
+            >
+              <span>Add / View Candidates</span>
+            </Button>
+          </Col>
+          {/* <Col
                   lg={3}
                   className="d-flex align-items-start justify-content-end"
                 >
                   <div>
                     <Priority urgency={urgency} />
                   </div>
-                </Col>
-              </Row>
-            </Card.Title>
-            <hr />
-
-            <Card.Text>
-              <Row className="d-flex flex-row">
-                <p>
-                  <strong>Information:</strong>
-                </p>
-                <Col className="">
-                  <Col>
-                    <p>Client: {client} </p>
-                  </Col>{" "}
-                  <Col>
-                    <p>POC: {contact}</p>
-                  </Col>{" "}
-                  <Col>
-                    <p>Email: {email}</p>
-                  </Col>{" "}
-                  <Col>
-                    <p>Quanity: {quantity}</p>
-                  </Col>{" "}
-                </Col>
-              </Row>{" "}
-              <hr />
-              {/* <strong>Client:</strong>  */}
-            </Card.Text>
-          </Row>
-          <Col className="">
-            <p>
-              <strong>Skills:</strong>
-            </p>
+                </Col> */}
+        </Row>
+        <hr />
+        <Row className="d-flex flex-row gap-3">
+          <p className="job-card-skills">SKILLS</p>
+          <Col lg={8} className="gap-3 mr-5">
             <div>
               {skillsArry.map((skill, id) => {
                 return (
                   <Button
-                    className="m-1 border shadow-sm"
-                    size="sm"
-                    variant="light"
+                    className="job-card-skills-button m-2 text-dark"
+                    // size="sm"
+                    // variant="light"
                     key={id}
                   >
-                    {skill}
+                    <span>{skill}</span>
                   </Button>
                 );
               })}
             </div>
           </Col>
-          <hr />
-          <Button
-            className="text-right mt-2 mb-1 btn-lg"
-            as={Link}
-            to={`/jobs/${id}`}
-            variant="warning"
-          >
-            Add/View Candidates
-          </Button>
-        </Card.Body>
-      </Card>
+          <Col lg={3} className="d-flex flex-row-reverse align-right">
+            {/* <Col lg={3}>
+                    <p>{client} </p>
+                  </Col>{" "}
+                  <Col lg={3}>
+                    <p>POC: {contact}</p>
+                  </Col>{" "}
+                  <Col lg={4}>
+                    <p>Email: {email}</p>
+                  </Col>{" "} */}
+            <Col className="text-center">
+              <p className="job-card-quantity">Quanity</p>
+              <p className="job-card-quantity-number"> {quantity}</p>
+            </Col>
+            <Col className="text-center">
+              <p className="job-card-quantity">Urgency</p>
+              <div>
+                <Priority urgency={urgency} />
+              </div>
+            </Col>{" "}
+          </Col>
+        </Row>{" "}
+        <hr />
+        {/* <strong>Client:</strong>  */}
+        <Button
+          className="text-right mt-2 mb-1 btn-lg"
+          as={Link}
+          to={`/jobs/${id}`}
+          variant="dark"
+        >
+          Add / View Candidates
+        </Button>
+      </div>
 
       {/* <Container>
         <Row className="p-3 mb-4 border shadow-sm text-left bg-light">

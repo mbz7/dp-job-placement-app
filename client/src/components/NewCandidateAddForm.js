@@ -11,7 +11,7 @@ function NewCandidateAddForm({ jobId, onAddNewCandidate }) {
 
   // POST new candidate
   function handleCandidateSubmit(e) {
-    // e.preventDefault(); taken out so that new cadidates show up right after being submitted
+    // e.preventDefault();
     const data = {
       job_id: jobId,
       first_name: newFirstName,

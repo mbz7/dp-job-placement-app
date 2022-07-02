@@ -26,9 +26,9 @@ function JobDetails({ job, skillsArry, urgency }) {
       <div className="job-details-card-container mt-5 w-100">
         <div className="job-card-container-content">
           <Row>
-            <Col lg={6} className="job-card-title-group">
-              <h3 className="job-card-job_title">{job.role}</h3>
-              <p className="job-card-client_name">{job.client} </p>
+            <Col lg={8} className="job-card-title-group">
+              <h3 className="job-details-job_title">{job.role}</h3>
+              <p className="job-card-client_name">{job.client_name} </p>
             </Col>
             <Col className="p-4 d-flex align-items-center justify-content-end"></Col>
           </Row>

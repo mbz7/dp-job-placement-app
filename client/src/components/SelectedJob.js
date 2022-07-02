@@ -49,31 +49,24 @@ function SelectedJob() {
   return (
     <>
       <Container className="m-auto">
-        <Col className="d-flex align-items-center pt-3 mt-3">
-          <Button
-            variant="outline-dark"
-            className="text-right btn-md btn-md"
-            as={Link}
-            to={`/`}
-          >
-            Back To Jobs
-          </Button>
-        </Col>
-        {/* {job.map((j) => {
-          return (
-            <JobDetails
-              key={j.id}
-              id={j.id}
-              client={j.client_name}
-              contact={j.contact_name}
-              email={j.email}
-              role={j.role}
-              urgency={j.urgency}
-              quantity={j.quantity}
-              skills={j.skills}
-            />
-          );
-        })} */}
+        <Row className=" job-details-header">
+          <Col className="d-flex align-items-center pt-3 mt-3">
+            <Col lg={5}>
+              <Button
+                variant="outline-dark"
+                className="text-right btn-md btn-md"
+                as={Link}
+                to={`/`}
+              >
+                Back To Jobs
+              </Button>
+            </Col>
+
+            <Col>
+              <h1 className="job-details-title">JOB DETAILS</h1>
+            </Col>
+          </Col>
+        </Row>
 
         <JobDetails job={job} urgency={job.urgency} />
 

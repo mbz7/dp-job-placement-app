@@ -36,14 +36,14 @@ function JobCard({
               <h3 className="job-card-job_title">{role}</h3>
               <p className="job-card-client_name">{client} </p>
             </Col>
-            <Col className="p-4 d-flex align-items-center justify-content-center">
-              <Button
+            <Col className="p-4 d-flex align-items-center justify-content-end">
+              <button
                 className="job-card-view-button"
                 as={Link}
                 to={`/jobs/${id}`}
               >
                 <span>Add / View Candidates</span>
-              </Button>
+              </button>
             </Col>
             {/* <Col
                   lg={3}
@@ -55,25 +55,27 @@ function JobCard({
                 </Col> */}
           </Row>
           <hr />
-          <Row className="d-flex flex-row">
-            <p className="job-card-subheader">SKILLS</p>
-            <Col lg={8} className="gap-3 mr-5">
-              <div>
-                {skillsArry.map((skill, id) => {
-                  return (
-                    <Button
-                      className="job-card-skills-button m-2 text-dark"
-                      // size="sm"
-                      // variant="light"
-                      key={id}
-                    >
-                      <span>{skill}</span>
-                    </Button>
-                  );
-                })}
-              </div>
+          <Row className="d-flex flex-row mb-4 p-2">
+            <Col>
+              <p className="job-card-subheader">SKILLS</p>
+              <Col lg={8} className="gap-3 mr-5">
+                <div>
+                  {skillsArry.map((skill, id) => {
+                    return (
+                      <Button
+                        className="job-card-skills-button m-2 text-dark"
+                        // size="sm"
+                        // variant="light"
+                        key={id}
+                      >
+                        <span>{skill}</span>
+                      </Button>
+                    );
+                  })}
+                </div>
+              </Col>
             </Col>
-            <Col lg={3} className="d-flex flex-row-reverse align-right">
+            <Col lg={4} className="d-flex flex-row-reverse align-right">
               {/* <Col lg={3}>
                     <p>{client} </p>
                   </Col>{" "}
@@ -96,9 +98,9 @@ function JobCard({
             </Col>
           </Row>{" "}
           <hr />
-          <p className="job-card-subheader">CONTACT</p>
-          <Container>
-            <Row className="w-75">
+          <Row className="d-flex flex-row mb-4 p-2">
+            <p className="job-card-subheader">CONTACT</p>
+            <Row className="w-75 p-2">
               <Col lg={6} sm={6} className="d-flex flex-row gap-3">
                 <Col lg={1}>
                   <PersonCircle size={30} />
@@ -116,7 +118,7 @@ function JobCard({
                 </Col>
               </Col>
             </Row>
-          </Container>
+          </Row>
           {/* <strong>Client:</strong>  */}
           {/* <Button
           className="text-right mt-2 mb-1 btn-lg"

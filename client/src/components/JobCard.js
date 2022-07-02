@@ -37,13 +37,15 @@ function JobCard({
               <p className="job-card-client_name">{client} </p>
             </Col>
             <Col className="p-4 d-flex align-items-center justify-content-end">
-              <button
-                className="job-card-view-button"
-                as={Link}
-                to={`/jobs/${id}`}
-              >
-                <span>Add / View Candidates</span>
-              </button>
+              <Link to={`/jobs/${id}`}>
+                <button
+                  className="job-card-view-button"
+                  as={Link}
+                  to={`/jobs/${id}`}
+                >
+                  <span>Add / View Candidates</span>
+                </button>
+              </Link>
             </Col>
             {/* <Col
                   lg={3}
@@ -98,7 +100,7 @@ function JobCard({
             </Col>
           </Row>{" "}
           <hr />
-          <Row className="d-flex flex-row mb-4 p-2">
+          <Row className="d-flex flex-row p-2">
             <p className="job-card-subheader">CONTACT</p>
             <Row className="w-75 p-2">
               <Col lg={6} sm={6} className="d-flex flex-row gap-3">

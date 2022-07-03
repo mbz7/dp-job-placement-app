@@ -11,7 +11,7 @@ function NewCandidateAddForm({ jobId, onAddNewCandidate }) {
 
   // POST new candidate
   function handleCandidateSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const data = {
       job_id: jobId,
       first_name: newFirstName,

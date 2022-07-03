@@ -14,7 +14,7 @@ class CandidatesController < ApplicationController
   
     def create
       candidate = Candidate.create!(candidate_params)
-      render json: comment, status: :created
+      render json: candidate, status: :created
     end
   
     private

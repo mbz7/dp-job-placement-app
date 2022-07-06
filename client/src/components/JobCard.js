@@ -51,7 +51,7 @@ function JobCard({
                   {skillsArry.map((skill, id) => {
                     return (
                       <Button
-                        className="job-card-skills-button m-2 text-dark"
+                        className="job-card-skills-button m-2 text-dark align-center"
                         key={id}
                       >
                         <span>{skill}</span>
@@ -61,7 +61,7 @@ function JobCard({
                 </div>
               </Col>
             </Col>
-            <Col lg={4} className="d-flex flex-row-reverse align-right">
+            <Col lg={4} className="d-flex flex-row align-right pt-3">
               <Col className="text-center">
                 <p className="job-card-quantity">Quanity</p>
                 <p className="job-card-quantity-number"> {quantity}</p>

@@ -45,7 +45,7 @@ function JobCard({
           <Row className="d-flex flex-row mb-4 p-2">
             <Col>
               <p className="job-card-subheader">SKILLS</p>
-              <Col lg={8} className="gap-3 mr-5">
+              <Col lg={8} className="gap-3 mr-5 mb-3">
                 <div>
                   {/* function to map through new skills array and input each into a styled button */}
                   {skillsArry.map((skill, id) => {
@@ -61,16 +61,21 @@ function JobCard({
                 </div>
               </Col>
             </Col>
-            <Col lg={4} className="d-flex flex-row align-right pt-3">
+            <Col
+              lg={4}
+              className="d-flex flex-row align-right quantity-urgency"
+            >
               <Col className="text-center">
                 <p className="job-card-quantity">Quanity</p>
                 <p className="job-card-quantity-number"> {quantity}</p>
               </Col>
-              <Col className="text-center">
-                <p className="job-card-quantity">Urgency</p>
-                <div>
+              <Col className="mx-auto">
+                <Col>
+                  <p className="job-card-quantity">Urgency</p>
+                </Col>
+                <Col>
                   <Priority urgency={urgency} />
-                </div>
+                </Col>
               </Col>{" "}
             </Col>
           </Row>{" "}

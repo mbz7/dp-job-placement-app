@@ -5,7 +5,7 @@ import "../css/priority.css";
 function Priority({ urgency }) {
   const [style, setStyle] = useState(() => {
     if (urgency === "High") {
-      return "priority-red";
+      return "priority-high";
     } else if (urgency === "Medium") {
       return "priority-medium";
     } else if (urgency === "Low") {
@@ -13,10 +13,12 @@ function Priority({ urgency }) {
     }
   });
 
+  console.log(style);
+
   return (
     <>
-      <div className={`p-2 w-75 opacity-75 priority-btn ${style}`}>
-        {urgency}
+      <div className={`${style} mx-auto`}>
+        <p className="text-center my-auto">{urgency}</p>
       </div>
     </>
   );

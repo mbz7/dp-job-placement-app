@@ -92,16 +92,16 @@
 }
 
 .candidate-list {
-  padding: 0px 10px;
+  padding: 0px 5px;
 }
 
 .candidate-list p {
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(82, 82, 82);
 }
 
 .candidate-list-headers {
-  padding: 0px 10px;
+  padding: 0px 5px;
 }
 
 .candidate-headers {

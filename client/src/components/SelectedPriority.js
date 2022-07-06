@@ -1,31 +1,39 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
+import "../css/priority.css";
 
-function SelectedPriority({ job }) {
-  let urgency = job.urgency;
+function SelectedPriority({ urgency }) {
+  const [style, setStyle] = useState("");
 
-  const [style, setStyle] = useState(() => {
-    if (urgency === "High") {
-      return "danger";
-    } else if (urgency === "Medium") {
-      return "warning";
-    } else if (urgency === "Low") {
-      return "success";
-    }
-  });
+  // const changeStyle = (urgency) => {
+  //   if (urgency === "High") {
+  //     return "priority-high";
+  //   } else if (urgency === "Medium") {
+  //     return "priority-medium";
+  //   } else if (urgency === "Low") {
+  //     return "priority-low";
+  //   }
+  // };
 
-  // console.log(style);
-  //   const handleStyle = (urgency) => {
+  useEffect(() => {
+    const changeStyle = (urgency) => {
+      if (urgency === "High") {
+        setStyle("priority-high");
+      } else if (urgency === "Medium") {
+        setStyle("priority-medium");
+      } else if (urgency === "Low") {
+        setStyle("priority-low");
+      }
+    };
+    changeStyle(urgency);
+  }, [urgency]);
 
-  //   };
   return (
     <>
-      <Button variant="outline-dark">{urgency}</Button>
+      <div className={`${style} mx-auto`}>
+        <p className="text-center my-auto">{urgency}</p>
+      </div>
     </>
   );
-  //
-
-  //
 }
 
 export default SelectedPriority;

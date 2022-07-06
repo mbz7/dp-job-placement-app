@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SelectedPriority from "./SelectedPriority";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import { PersonCircle } from "react-bootstrap-icons";
 import { Envelope } from "react-bootstrap-icons";
 
+// import Split from "react-split";
+
 function JobDetails({ job, skillsArry, urgency }) {
+  const [skills, setSkills] = useState([]);
+
+  // console.log(skillsArry);
+  // let urgency = job.urgency;
+
+  const stringSkills = job.skills || "";
+  // console.log(stringSkills);
+  // console.log(typeof stringSkills);
+
+  useEffect(() => {
+    setSkills(stringSkills.split(/[ ,]+/));
+  }, [stringSkills]);
+
+  // console.log(skills);
+  // console.log(typeof skills);
+
   return (
     <>
       <div className="job-details-card-container mt-5 w-100">
@@ -18,14 +37,29 @@ function JobDetails({ job, skillsArry, urgency }) {
             <Col className="p-4 d-flex align-items-center justify-content-end"></Col>
           </Row>
           <hr />
-          <Row className="d-flex flex-row mb-4 p-2">
-            <Col>
+          <Row className="d-flex flex-row mb-4 p-2 gap-5">
+            <Col lg={7}>
               <p className="job-card-subheader">SKILLS</p>
-              <Col lg={8} className="gap-3 mr-5">
+              {/* <Col lg={8} className="gap-3 mr-5 mb-4">
                 {job.skills}
+              </Col> */}
+              <Col className="gap-3 mr-5 mb-3">
+                <div>
+                  {/* function to map through new skills array and input each into a styled button */}
+                  {skills.map((skill, id) => {
+                    return (
+                      <Button
+                        className="job-card-skills-button m-2 text-dark align-center px-4"
+                        key={id}
+                      >
+                        <span>{skill}</span>
+                      </Button>
+                    );
+                  })}
+                </div>
               </Col>
             </Col>
-            <Col lg={4} className="d-flex flex-row-reverse align-right">
+            <Col lg={4} className="d-flex flex-row-reverse quantity-urgency">
               <Col className="text-center">
                 <p className="job-card-quantity">Quanity</p>
                 <p className="job-card-quantity-number"> {job.quantity}</p>
@@ -33,7 +67,7 @@ function JobDetails({ job, skillsArry, urgency }) {
               <Col className="text-center">
                 <p className="job-card-quantity">Urgency</p>
                 <div>
-                  <SelectedPriority job={job} />
+                  <SelectedPriority urgency={urgency} />
                 </div>
               </Col>{" "}
             </Col>

@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
 import "../css/priority.css";
 
 function Priority({ urgency }) {
-  const [style, setStyle] = useState(() => {
-    if (urgency === "High") {
-      return "priority-high";
-    } else if (urgency === "Medium") {
-      return "priority-medium";
-    } else if (urgency === "Low") {
-      return "priority-low";
-    }
-  });
+  const [style, setStyle] = useState("");
 
-  console.log(style);
+  useEffect(() => {
+    const changeStyle = (urgency) => {
+      if (urgency === "High") {
+        setStyle("priority-high");
+      } else if (urgency === "Medium") {
+        setStyle("priority-medium");
+      } else if (urgency === "Low") {
+        setStyle("priority-low");
+      }
+    };
+    changeStyle(urgency);
+  }, [urgency]);
 
   return (
     <>
@@ -22,9 +24,6 @@ function Priority({ urgency }) {
       </div>
     </>
   );
-  //
-
-  //
 }
 
 export default Priority;

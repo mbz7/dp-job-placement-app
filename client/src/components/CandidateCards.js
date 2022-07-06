@@ -7,31 +7,30 @@ function CandidateCards({ candidates, jobId }) {
   return (
     <>
       {/* List of Candidates */}
-      <Col className="mt-5 text-left">
-        <Row>
+      <Col className="mt-2 text-left">
+        <Row className="candidate-list-headers mb-2">
           <Col lg={3} xs={3}>
-            <p>
+            <p className="candidate-headers">
               <strong>First Name</strong>
             </p>
           </Col>
           <Col lg={3} xs={3}>
-            <p>
+            <p className="candidate-headers">
               <strong>Last Name</strong>
             </p>
           </Col>
           <Col lg={3} xs={3}>
-            <p className="text-right">
-              <strong>Phone Number</strong>
+            <p className="candidate-headers">
+              <strong>Phone</strong>
             </p>
           </Col>
           <Col lg={3} xs={3}>
-            <p>
+            <p className="candidate-headers">
               <strong>City, State</strong>
             </p>
           </Col>
+          <hr />
         </Row>
-
-        <hr />
 
         {/* iterate through candidates */}
         {candidates.map((candidate) => {

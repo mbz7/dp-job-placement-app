@@ -23,6 +23,7 @@ function SelectedJob() {
   const candidates = job.candidates;
   const { id } = useParams();
   const jobId = job.id;
+  const skillsArry = job.skills;
 
   // GET fetch all jobs
   useEffect(() => {
@@ -32,6 +33,8 @@ function SelectedJob() {
         setJob(joblist);
       });
   }, [id]);
+
+  // console.log(skillsArry);
 
   const addCandidate = (newCandidate) => {
     //fetch to add candidate to job
@@ -63,9 +66,9 @@ function SelectedJob() {
           </Col>
         </Row>
 
-        <JobDetails job={job} urgency={job.urgency} />
+        <JobDetails job={job} urgency={job.urgency} skillsArry={skillsArry} />
 
-        <Row className="gap-5 ml-3 rounded">
+        <Row className="gap-3 ml-3 rounded">
           <Col lg={5}>
             <NewCandidateAddForm
               onAddNewCandidate={addCandidate}
@@ -75,7 +78,7 @@ function SelectedJob() {
 
           <Col className="candidate-list-container rounded p-4">
             <Col>
-              <h3 className="text-center mt-5 ">CANDIDATES</h3>
+              <h3 className="text-center mt-3 ">CANDIDATES</h3>
             </Col>
             <hr />
 

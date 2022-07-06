@@ -1,5 +1,59 @@
 /* Job Details and Selected Job Styles */
 
+@media (max-width: 991.98px) {
+  .quantity-urgency {
+    /* margin: 0 auto; */
+    padding-top: 30px;
+    border-top: 1px solid #cccccc;
+  }
+
+  .job-details-container-content {
+    padding: 30px 40px;
+  }
+
+  .job-details-job_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 34px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+
+  .add-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 992px) {
+  .job-details-container-content {
+    padding: 40px 100px;
+  }
+
+  .job-details-job_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+
+  .add-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+}
+
 .job-details-title {
   font-size: 30px;
   margin-top: 10px;
@@ -16,18 +70,6 @@
   margin-bottom: 50px;
   border-radius: 10px;
   border-top: 6px solid #41a3da !important;
-}
-
-.job-details-job_title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 47px;
-  text-align: left;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  color: #000000;
 }
 
 .candidate-form-container {
@@ -49,7 +91,20 @@
   border-top: 6px solid #ff9700 !important;
 }
 
+.candidate-list {
+  padding: 0px 10px;
+}
+
 .candidate-list p {
   font-size: 14px;
   color: rgb(82, 82, 82);
+}
+
+.candidate-list-headers {
+  padding: 0px 10px;
+}
+
+.candidate-headers {
+  font-size: 16px;
+  text-transform: uppercase;
 }

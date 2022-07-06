@@ -6,6 +6,55 @@
     padding-top: 30px;
     border-top: 1px solid #cccccc;
   }
+
+  .job-card-container-content {
+    padding: 30px 40px;
+  }
+
+  .job-card-job_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 34px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+
+  .add-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 992px) {
+  .job-card-container-content {
+    padding: 40px 100px;
+  }
+
+  .job-card-job_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+
+  .add-view-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+  .quantity-urgency {
+    padding-top: 10px;
+  }
 }
 
 /* Home Hero */
@@ -76,23 +125,8 @@
   border-top: 6px solid #41a3da !important;
 }
 
-.job-card-container-content {
-  padding: 40px 100px;
-}
-
 .job-card-title-group {
   text-align: left;
-}
-
-.job-card-job_title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 47px;
-  text-align: left;
-  margin-bottom: 20px;
-  color: #000000;
 }
 
 .job-card-client_name {
@@ -113,6 +147,7 @@
   box-shadow: 0px 2px 2px rgba(215, 215, 215, 0.25);
   border-radius: 12px;
 }
+
 .job-card-view-button:hover {
   width: 254px;
   height: 55px;
@@ -144,9 +179,9 @@
 }
 
 .job-card-skills-button {
-  background: #f8fafc !important;
-  border: 1px solid #f1f1f1 !important;
-  box-shadow: 0px 2px 2px rgba(215, 215, 215, 0.25);
+  background: #f0f2f5 !important;
+  border: 1px solid #edeaea !important;
+  /* box-shadow: 0px 2px 2px rgba(215, 215, 215, 0.112); */
   border-radius: 12px;
 }
 
@@ -154,7 +189,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
   text-align: center;
   color: #626262;

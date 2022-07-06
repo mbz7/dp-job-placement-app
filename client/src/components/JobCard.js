@@ -29,7 +29,7 @@ function JobCard({
               <h3 className="job-card-job_title">{role}</h3>
               <p className="job-card-client_name">{client} </p>
             </Col>
-            <Col className="p-4 d-flex align-items-center justify-content-end">
+            <Col className="p-4 add-view-container">
               <Link to={`/jobs/${id}`}>
                 <button
                   className="job-card-view-button"
@@ -42,16 +42,16 @@ function JobCard({
             </Col>
           </Row>
           <hr />
-          <Row className="d-flex flex-row mb-4 p-2">
-            <Col>
+          <Row className="d-flex flex-row mb-4 p-2 gap-5">
+            <Col lg={7}>
               <p className="job-card-subheader">SKILLS</p>
-              <Col lg={8} className="gap-3 mr-5 mb-3">
+              <Col className="gap-3 mr-5 mb-3">
                 <div>
                   {/* function to map through new skills array and input each into a styled button */}
                   {skillsArry.map((skill, id) => {
                     return (
                       <Button
-                        className="job-card-skills-button m-2 text-dark align-center"
+                        className="job-card-skills-button m-2 text-dark align-center px-4"
                         key={id}
                       >
                         <span>{skill}</span>
@@ -80,10 +80,14 @@ function JobCard({
             </Col>
           </Row>{" "}
           <hr />
-          <Row className="d-flex flex-row p-2">
+          <Row className="d-flex flex-row p-2 w-75">
             <p className="job-card-subheader">CONTACT</p>
-            <Row className="w-75 p-2">
-              <Col lg={6} sm={6} className="d-flex flex-row gap-3">
+            <Row className=" p-2">
+              <Col
+                lg={4}
+                md={12}
+                className="d-flex flex-row align-items-start gap-4"
+              >
                 <Col lg={1}>
                   <PersonCircle size={30} />
                 </Col>
@@ -91,7 +95,7 @@ function JobCard({
                   <p className="job-card-contact-text">{contact}</p>
                 </Col>
               </Col>
-              <Col lg={6} sm={6} className="d-flex flex-row gap-3">
+              <Col lg={6} sm={12} className="d-flex flex-row gap-3">
                 <Col lg={1}>
                   <Envelope size={30} />
                 </Col>
